@@ -1,0 +1,129 @@
+# InMoov Right Hand Configuration
+# PCA9685 connected to Raspberry Pi 4B via I2C
+
+i2c:
+  bus: 1
+  address: 0x40  # default PCA9685 address
+
+pca9685:
+  frequency: 50  # standard servo PWM frequency (Hz)
+
+# Servo channels and calibration
+# pulse_min/pulse_max in microseconds (typical hobby servo range)
+# angle_min/angle_max in degrees
+# open = fingers extended, closed = fingers curled
+
+servos:
+  thumb:
+    channel: 0
+    pulse_min: 500
+    pulse_max: 2500
+    angle_open: 0
+    angle_closed: 180
+    default: 0
+
+  index:
+    channel: 1
+    pulse_min: 500
+    pulse_max: 2500
+    angle_open: 0
+    angle_closed: 180
+    default: 0
+
+  middle:
+    channel: 2
+    pulse_min: 500
+    pulse_max: 2500
+    angle_open: 0
+    angle_closed: 180
+    default: 0
+
+  ring:
+    channel: 3
+    pulse_min: 500
+    pulse_max: 2500
+    angle_open: 0
+    angle_closed: 180
+    default: 0
+
+  pinky:
+    channel: 4
+    pulse_min: 500
+    pulse_max: 2500
+    angle_open: 0
+    angle_closed: 180
+    default: 0
+
+  wrist:
+    channel: 5
+    pulse_min: 500
+    pulse_max: 2500
+    angle_min: 0
+    angle_max: 180
+    default: 90  # centered
+
+# Predefined gestures (angle per servo, 0=open 180=closed for fingers)
+gestures:
+  open:
+    thumb: 0
+    index: 0
+    middle: 0
+    ring: 0
+    pinky: 0
+    wrist: 90
+
+  fist:
+    thumb: 180
+    index: 180
+    middle: 180
+    ring: 180
+    pinky: 180
+    wrist: 90
+
+  point:
+    thumb: 180
+    index: 0
+    middle: 180
+    ring: 180
+    pinky: 180
+    wrist: 90
+
+  peace:
+    thumb: 180
+    index: 0
+    middle: 0
+    ring: 180
+    pinky: 180
+    wrist: 90
+
+  thumbs_up:
+    thumb: 0
+    index: 180
+    middle: 180
+    ring: 180
+    pinky: 180
+    wrist: 90
+
+  grab:
+    thumb: 140
+    index: 160
+    middle: 160
+    ring: 160
+    pinky: 160
+    wrist: 90
+
+  pinch:
+    thumb: 120
+    index: 120
+    middle: 0
+    ring: 0
+    pinky: 0
+    wrist: 90
+
+  rock:
+    thumb: 0
+    index: 0
+    middle: 180
+    ring: 180
+    pinky: 0
+    wrist: 90
